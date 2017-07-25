@@ -1,0 +1,219 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="relativeDefault_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:focusableInTouchMode">true</item>
+    </style>
+
+    <style name="listView_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:divider">@color/colorAccent</item>
+        <item name="android:dividerHeight">@dimen/divider_height_size</item>
+    </style>
+
+    <style name="empty_view_image">
+        <item name="android:layout_width">@dimen/empty_view_image_widht</item>
+        <item name="android:layout_height">@dimen/empty_view_image_height</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:src">@drawable/sunshine_autos</item>
+    </style>
+
+    <style name="empty_view_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">@dimen/main_margin_size</item>
+        <item name="android:layout_marginLeft">@dimen/main_margin_size</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_below">@id/empty_view_image</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-smallcaps</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:text">@string/empty_view_default_text</item>
+    </style>
+
+    <style name="fab_button_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">@dimen/main_margin_size</item>
+        <item name="android:layout_marginBottom">@dimen/main_margin_size</item>
+        <item name="android:src">@drawable/ic_add_one</item>
+    </style>
+
+    <style name="scroll_view_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:focusableInTouchMode">true</item>
+    </style>
+
+    <style name="item_image_style">
+        <item name="android:layout_width">@dimen/item_image_width</item>
+        <item name="android:layout_height">@dimen/item_image_height</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:src">@drawable/no_image</item>
+    </style>
+
+    <style name="category_style">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingTop">@dimen/main_margin_size</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
+    <style name="editor_units_style">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:paddingRight">@dimen/main_margin_size</item>
+        <item name="android:paddingTop">@dimen/main_margin_size</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+    </style>
+
+
+    <style name="editor_field_style">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+    </style>
+
+    <style name="item_to_add_quantity_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:hint">@string/item_quantity_hint</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:inputType">number</item>
+        <item name="android:textColorHint">@color/colorPrimary</item>
+    </style>
+
+    <style name="added_quantity_buttons_style">
+        <item name="android:layout_width">@dimen/quantity_button_size</item>
+        <item name="android:layout_height">@dimen/quantity_button_size</item>
+        <item name="android:layout_margin">@dimen/quantity_button_margin</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/colorSecondaryText</item>
+        <item name="android:textSize">@dimen/quantity_button_text_size</item>
+    </style>
+
+    <style name="category_label_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/category_label_style_margin</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="editor_field_style.salesStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/salesStyle_margin</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="editor_units_style.salesStyle">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="item_image_lv_style">
+
+        <item name="android:layout_width">@dimen/item_image_lv_style_width</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_height">@dimen/item_image_lv_style_height</item>
+    </style>
+
+    <style name="item_details_lv_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/item_details_lv_style_margin</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="item_sold_lv_style">
+        <item name="android:layout_width">@dimen/item_sold_lv_style_size</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginRight">@dimen/item_sold_lv_style_margin</item>
+        <item name="android:background">@drawable/roundedbutton</item>
+        <item name="android:padding">@dimen/main_margin_size</item>
+    </style>
+
+    <style name="item_brand_lv_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/item_brand_lv_style_margin</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="item_name_lv_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/item_name_lv_style_margin</item>
+        <item name="android:layout_marginTop">@dimen/item_name_lv_style_margin</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textSize">@dimen/item_name_lv_style_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="item_details_layout_lv_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/item_details_layout_lv_style_marginSides
+        </item>
+        <item name="android:layout_marginRight">@dimen/item_details_layout_lv_style_marginSides
+        </item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="main_layout_lv_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/main_layout_lv_style_margin</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="editor_secondary_layout_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/main_margin_size</item>
+    </style>
+
+    <style name="item_image_layout_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/main_margin_size</item>
+    </style>
+
+
+</resources>

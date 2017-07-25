@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    style="@style/scroll_view_style">
+
+    <LinearLayout style="@style/editor_secondary_layout_style">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/category_style"
+                android:text="@string/item_name_label" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/item_name"
+                    style="@style/editor_field_style"
+                    android:hint="@string/item_name_hint" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/category_style"
+                android:text="@string/item_brand_label" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/item_brand"
+                    style="@style/editor_field_style"
+                    android:hint="@string/item_brand_hint" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/category_style"
+                android:text="@string/item_price_label" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2">
+
+                <EditText
+                    android:id="@+id/item_price"
+                    style="@style/editor_field_style"
+                    android:hint="@string/item_price_hint"
+                    android:inputType="number" />
+
+                <TextView
+                    style="@style/editor_units_style"
+                    android:text="@string/currency" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/quantity_container_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/category_style"
+                android:text="@string/item_quantity_label" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2">
+
+                <EditText
+                    android:id="@+id/item_quantity"
+                    style="@style/editor_field_style"
+                    android:hint="@string/item_quantity_hint"
+                    android:inputType="number" />
+
+                <TextView
+                    style="@style/editor_units_style"
+                    android:text="@string/item_quantity_units" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sales_container_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/category_style"
+                android:text="@string/item_sales_label" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                <TextView
+                    android:id="@+id/item_sales"
+                    style="@style/editor_field_style.salesStyle" />
+
+                <TextView
+                    style="@style/editor_units_style.salesStyle"
+                    android:text="@string/currency" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/new_stock_container_layout"
+            style="@style/category_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/added_item_quantity_label"
+                style="@style/category_label_style"
+                android:text="@string/item_current_stock_label" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_subtraction"
+                    style="@style/added_quantity_buttons_style"
+                    android:text="@string/button_subtraction" />
+
+                <EditText
+                    android:id="@+id/item_to_add_quantity"
+                    style="@style/item_to_add_quantity_style" />
+
+                <Button
+                    android:id="@+id/button_addition"
+                    style="@style/added_quantity_buttons_style"
+                    android:text="@string/button_addition" />
+
+                <Button
+                    android:id="@+id/stock_request"
+                    style="@style/added_quantity_buttons_style"
+                    android:text="ADD" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout style="@style/item_image_layout_style">
+
+            <TextView
+                android:id="@+id/item_image_label"
+                style="@style/category_label_style"
+                android:text="@string/item_image_label" />
+
+            <ImageView
+                android:id="@+id/item_image"
+                style="@style/item_image_style"
+                android:layout_below="@+id/item_image_label"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

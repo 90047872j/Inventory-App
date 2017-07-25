@@ -1,0 +1,25 @@
+<resources>
+    <dimen name="main_margin_size">16dp</dimen>
+    <dimen name="divider_height_size">1dp</dimen>
+    <dimen name="empty_view_image_widht">400dp</dimen>
+    <dimen name="empty_view_image_height">222dp</dimen>
+    <dimen name="item_image_width">233dp</dimen>
+    <dimen name="item_image_height">200dp</dimen>
+    <dimen name="quantity_button_size">50dp</dimen>
+    <dimen name="quantity_button_margin">4dp</dimen>
+    <dimen name="quantity_button_text_size">20sp</dimen>
+    <dimen name="category_label_style_margin">4dp</dimen>
+    <dimen name="salesStyle_margin">10dp</dimen>
+    <dimen name="item_image_lv_style_width">133dp</dimen>
+    <dimen name="item_image_lv_style_height">100dp</dimen>
+    <dimen name="item_details_lv_style_margin">2dp</dimen>
+    <dimen name="item_sold_lv_style_size">55dp</dimen>
+    <dimen name="item_sold_lv_style_margin">28dp</dimen>
+    <dimen name="item_brand_lv_style_margin">10dp</dimen>
+    <dimen name="item_name_lv_style_margin">2dp</dimen>
+    <dimen name="item_name_lv_style_text">20sp</dimen>
+    <dimen name="item_details_layout_lv_style_marginSides">10dp</dimen>
+    <dimen name="main_layout_lv_style_margin">8dp</dimen>
+    <dimen name="roundedbutton_size">56dp</dimen>
+
+</resources>

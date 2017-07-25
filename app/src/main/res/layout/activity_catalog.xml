@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/relativeDefault_style">
+
+    <ListView
+        android:id="@+id/list"
+        style="@style/listView_style">
+
+    </ListView>
+
+    <RelativeLayout
+        android:id="@+id/empty_view_layout"
+        style="@style/relativeDefault_style">
+
+        <ImageView
+            android:id="@+id/empty_view_image"
+            style="@style/empty_view_image" />
+
+        <TextView
+            style="@style/empty_view_text"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        style="@style/fab_button_style"
+        app:fabSize="normal" />
+
+</RelativeLayout>

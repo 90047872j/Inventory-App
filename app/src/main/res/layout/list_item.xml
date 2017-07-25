@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/main_layout_lv_style"
+    android:weightSum="1">
+
+    <ImageView
+        android:id="@+id/item_image_listView"
+        style="@style/item_image_lv_style"
+        android:src="@drawable/no_image" />
+
+    <LinearLayout style="@style/item_details_layout_lv_style">
+
+        <TextView
+            android:id="@+id/item_name_listView"
+            style="@style/item_name_lv_style"
+            android:text="@string/item_name_label" />
+
+        <TextView
+            android:id="@+id/item_brand_listView"
+            style="@style/item_brand_lv_style"
+            android:text="@string/item_brand_label" />
+
+        <TextView
+            android:id="@+id/item_price_listView"
+            style="@style/item_details_lv_style"
+            android:text="@string/item_price_label" />
+
+        <TextView
+            android:id="@+id/item_quantity_listView"
+            style="@style/item_details_lv_style"
+            android:text="@string/item_quantity_label" />
+
+        <TextView
+            android:id="@+id/item_sales_listView"
+            style="@style/item_details_lv_style"
+            android:text="@string/item_sales_label" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/item_sold_listView"
+        style="@style/item_sold_lv_style"
+        android:src="@drawable/icon_sell" />
+
+</LinearLayout>
