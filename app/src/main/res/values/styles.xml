@@ -220,5 +220,10 @@
         <item name="android:padding">@dimen/main_margin_padding_size</item>
     </style>
 
+    <style name="editor_field_style.replaced_layout_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">2</item>
+    </style>
+
 
 </resources>

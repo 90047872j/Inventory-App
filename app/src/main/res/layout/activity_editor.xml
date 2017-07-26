@@ -14,18 +14,10 @@
                 style="@style/category_style"
                 android:text="@string/item_name_label" />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:orientation="vertical">
-
                 <EditText
                     android:id="@+id/item_name"
-                    style="@style/editor_field_style"
+                    style="@style/editor_field_style.replaced_layout_style"
                     android:hint="@string/item_name_hint" />
-
-            </LinearLayout>
 
         </LinearLayout>
 
@@ -38,18 +30,10 @@
                 style="@style/category_style"
                 android:text="@string/item_brand_label" />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:orientation="vertical">
-
                 <EditText
                     android:id="@+id/item_brand"
-                    style="@style/editor_field_style"
+                    style="@style/editor_field_style.replaced_layout_style"
                     android:hint="@string/item_brand_hint" />
-
-            </LinearLayout>
 
         </LinearLayout>
 

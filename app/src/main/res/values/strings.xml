@@ -20,7 +20,7 @@
     <string name="no_stock_updated">Unable to update stock</string>
     <string name="dialog_message_deleteAll">Delete all items?</string>
     <string name="no_stock_left">No more stock left on the selected product</string>
-    <string name="dialog_send_order">Place stock oder?</string>
+    <string name="dialog_send_order">Place stock order?</string>
     <string name="button_yes">Yes</string>
     <string name="button_no">No</string>
     <string name="place_order_reminder">Remember to place an order for new stock</string>

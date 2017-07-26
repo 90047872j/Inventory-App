@@ -50,7 +50,6 @@ public class EditorActivity extends AppCompatActivity
     private TextView tv_place_order_reminder;
     private TextView tv_sales;
     private EditText et_modStock;
-    private ImageView iv_requestStock;
     private int deletedRows = 0;
     private boolean isItemUpdated = false;
     private int current_item_quantity = 0;
@@ -81,10 +80,10 @@ public class EditorActivity extends AppCompatActivity
         et_modStock = (EditText) findViewById(R.id.item_to_mod_quantity);
         tv_place_order_reminder = (TextView) findViewById(R.id.place_order_reminder_label);
         tv_sales = (TextView) findViewById(R.id.item_sales);
-        iv_requestStock = (ImageView) findViewById(R.id.stock_request);
         tv_quantity_label = (TextView) findViewById(R.id.quantity_label_textView);
         Button b_minus = (Button) findViewById(R.id.button_subtraction);
         Button b_plus = (Button) findViewById(R.id.button_addition);
+        ImageView b_requestStock = (ImageView) findViewById(R.id.stock_request);
 
         scroll_view.fullScroll(ScrollView.FOCUS_UP);
 
@@ -141,6 +140,13 @@ public class EditorActivity extends AppCompatActivity
             }
         });
 
+        b_requestStock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialogRequestMerchandise();
+
+            }
+        });
     }
 
     private void updateItemStock() {
@@ -191,6 +197,7 @@ public class EditorActivity extends AppCompatActivity
             }
         }
     }
+
 
     private String createOrderSummary(String item, String stock) {
         String message = "Stock request:\n" + item + " units: " + stock;
@@ -243,13 +250,7 @@ public class EditorActivity extends AppCompatActivity
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(R.string.dialog_message_discard_changes_label);
         builder.setPositiveButton(R.string.button_discard_changes, discardButtonClickListener);
-        builder.setNegativeButton(R.string.button_keep_editing, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                if (dialog != null) {
-                    dialog.dismiss();
-                }
-            }
-        });
+        builder.setNegativeButton(R.string.button_keep_editing, null);
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
@@ -471,13 +472,7 @@ public class EditorActivity extends AppCompatActivity
 
             }
         });
-        builder.setNegativeButton(R.string.button_no, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                if (dialog != null) {
-                    dialog.dismiss();
-                }
-            }
-        });
+        builder.setNegativeButton(R.string.button_no,null);
 
         AlertDialog alertDialog = builder.create();
         alertDialog.setTitle(getString(R.string.dialog_stock_request_label));

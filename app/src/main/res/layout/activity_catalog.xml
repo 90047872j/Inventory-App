@@ -5,9 +5,7 @@
 
     <ListView
         android:id="@+id/list"
-        style="@style/listView_style">
-
-    </ListView>
+        style="@style/listView_style"/>
 
     <RelativeLayout
         android:id="@+id/empty_view_layout"
@@ -19,11 +17,7 @@
 
         <TextView
             android:id="@+id/empty_view_text_view"
-            style="@style/empty_view_text"
-             />
-
-
-
+            style="@style/empty_view_text"/>
 
     </RelativeLayout>
 
