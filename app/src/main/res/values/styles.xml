@@ -31,8 +31,8 @@
     <style name="empty_view_text">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginRight">@dimen/main_margin_size</item>
-        <item name="android:layout_marginLeft">@dimen/main_margin_size</item>
+        <item name="android:layout_marginRight">@dimen/main_margin_padding_size</item>
+        <item name="android:layout_marginLeft">@dimen/main_margin_padding_size</item>
         <item name="android:layout_centerInParent">true</item>
         <item name="android:layout_below">@id/empty_view_image</item>
         <item name="android:textAlignment">center</item>
@@ -48,8 +48,8 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_alignParentRight">true</item>
-        <item name="android:layout_marginRight">@dimen/main_margin_size</item>
-        <item name="android:layout_marginBottom">@dimen/main_margin_size</item>
+        <item name="android:layout_marginRight">@dimen/main_margin_padding_size</item>
+        <item name="android:layout_marginBottom">@dimen/main_margin_padding_size</item>
         <item name="android:src">@drawable/ic_add_one</item>
     </style>
 
@@ -70,7 +70,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:paddingTop">@dimen/main_margin_size</item>
+        <item name="android:paddingTop">@dimen/main_margin_padding_size</item>
         <item name="android:textColor">@color/colorAccent</item>
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
         <item name="android:fontFamily">sans-serif-condensed</item>
@@ -82,8 +82,9 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_alignParentRight">true</item>
-        <item name="android:paddingRight">@dimen/main_margin_size</item>
-        <item name="android:paddingTop">@dimen/main_margin_size</item>
+        <item name="android:textColor">@color/colorNotEditable</item>
+        <item name="android:paddingRight">@dimen/main_margin_padding_size</item>
+        <item name="android:paddingTop">@dimen/main_margin_padding_size</item>
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
     </style>
 
@@ -103,7 +104,6 @@
         <item name="android:textColor">@color/colorPrimaryText</item>
         <item name="android:textAlignment">center</item>
         <item name="android:inputType">number</item>
-        <item name="android:textColorHint">@color/colorPrimary</item>
     </style>
 
     <style name="added_quantity_buttons_style">
@@ -112,6 +112,7 @@
         <item name="android:layout_margin">@dimen/quantity_button_margin</item>
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/colorSecondaryText</item>
         <item name="android:textSize">@dimen/quantity_button_text_size</item>
     </style>
@@ -130,12 +131,9 @@
     <style name="editor_field_style.salesStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_marginTop">@dimen/salesStyle_margin</item>
-        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorNotEditable</item>
     </style>
 
-    <style name="editor_units_style.salesStyle">
-        <item name="android:textColor">@color/colorPrimary</item>
-    </style>
 
     <style name="item_image_lv_style">
 
@@ -155,11 +153,11 @@
 
     <style name="item_sold_lv_style">
         <item name="android:layout_width">@dimen/item_sold_lv_style_size</item>
-        <item name="android:layout_height">55dp</item>
+        <item name="android:layout_height">@dimen/item_sold_lv_style_size</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_marginRight">@dimen/item_sold_lv_style_margin</item>
         <item name="android:background">@drawable/roundedbutton</item>
-        <item name="android:padding">@dimen/main_margin_size</item>
+        <item name="android:padding">@dimen/main_margin_padding_size</item>
     </style>
 
     <style name="item_brand_lv_style">
@@ -206,13 +204,21 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">vertical</item>
-        <item name="android:padding">@dimen/main_margin_size</item>
+        <item name="android:padding">@dimen/main_margin_padding_size</item>
     </style>
 
     <style name="item_image_layout_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">@dimen/main_margin_size</item>
+        <item name="android:layout_margin">@dimen/main_margin_padding_size</item>
+    </style>
+
+    <style name="category_label_style.reminder_text_style">
+        <item name="android:textColor">@color/colorTextReminder</item>
+    </style>
+
+    <style name="added_quantity_buttons_style.place_order_style">
+        <item name="android:padding">@dimen/main_margin_padding_size</item>
     </style>
 
 

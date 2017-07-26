@@ -6,8 +6,8 @@
     <string name="no_item_added">Unable to add a new item</string>
     <string name="item_updated">Item updated successfully</string>
     <string name="item_added">Item added successfully</string>
-    <string name="activity_label_new_item">New item:</string>
-    <string name="activity_label_modify_item">Modify item:</string>
+    <string name="activity_label_new_item">New item</string>
+    <string name="activity_label_modify_item">Modify item</string>
     <string name="dialog_message_discard_changes_label">Discard Changes?</string>
     <string name="order_summary_email_subject">%1$s Stock request</string>
     <string name="dialog_stock_request_label">Request Stock</string>
@@ -17,14 +17,13 @@
     <string name="button_cancel">Cancel</string>
     <string name="item_deleted">Item deleted successfully</string>
     <string name="no_item_deleted">Unable to delete item</string>
-    <string name="stock_updated">Stock updated successfully</string>
     <string name="no_stock_updated">Unable to update stock</string>
     <string name="dialog_message_deleteAll">Delete all items?</string>
     <string name="no_stock_left">No more stock left on the selected product</string>
-    <string name="dialog_add_new_stock">Add new stock?</string>
+    <string name="dialog_send_order">Place stock oder?</string>
     <string name="button_yes">Yes</string>
     <string name="button_no">No</string>
-    <string name="add_stock_label">Remember to place the order:</string>
+    <string name="place_order_reminder">Remember to place an order for new stock</string>
     <string name="dummy_data_option">Insert Dummy Data</string>
     <string name="action_delete_all_entries">Delete All Items</string>
     <string name="action_save">Save</string>
@@ -49,7 +48,8 @@
     <string name="item_quantity_units">Units</string>
     <string name="dialog_delete_label">Confirmation</string>
     <string name="item_sales_label">Sales</string>
-    <string name="item_current_stock_label">Current Stock</string>
+    <string name="item_current_stock_label">Current stock</string>
+    <string name="item_mod_stock_label_text">Modify Stock</string>
     <string name="button_subtraction">-</string>
     <string name="button_addition">+</string>
     <string name="currency">$</string>

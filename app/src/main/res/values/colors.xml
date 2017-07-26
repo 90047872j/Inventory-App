@@ -3,6 +3,9 @@
     <color name="colorPrimary">#ff3300</color>
     <color name="colorAccent">@color/colorPrimary</color>
     <color name="colorPrimaryText">#000000</color>
+    <color name="colorTextReminder">#0000cc</color>
+    <color name="colorNotEditable">#a6a6a6</color>
     <color name="colorSecondaryText">#ffffff</color>
     <color name="colorSellButton">#33cc33</color>
+    <color name="colorTransparent">#00000000</color>
 </resources>

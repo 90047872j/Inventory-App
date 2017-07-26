@@ -36,6 +36,7 @@ import java.io.File;
 public class EditorActivity extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<Cursor> {
 
+
     public static final int PHOTO_REQUEST_CODE = 20;
     public static final int EXTERNAL_STORAGE_REQUEST_PERMISSION_CODE = 21;
     private static final int EXISTING_PRODUCT_LOADER = 0;
@@ -45,14 +46,14 @@ public class EditorActivity extends AppCompatActivity
     private EditText et_item_price;
     private EditText et_item_brand;
     private EditText et_quantity;
-    private TextView tv_sales;
-    private EditText et_addStock;
-    private Button b_requestStock;
     private TextView tv_quantity_label;
+    private TextView tv_place_order_reminder;
+    private TextView tv_sales;
+    private EditText et_modStock;
+    private ImageView iv_requestStock;
     private int deletedRows = 0;
     private boolean isItemUpdated = false;
     private int current_item_quantity = 0;
-    private Boolean stock_requested = false;
     private String currentPhotoUri = "no image";
 
     private View.OnTouchListener mTouchListener = new View.OnTouchListener() {
@@ -68,6 +69,7 @@ public class EditorActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor);
 
+
         ScrollView scroll_view = (ScrollView) findViewById(R.id.scrollView);
         LinearLayout ll_addStock = (LinearLayout) findViewById(R.id.new_stock_container_layout);
         LinearLayout ll_sales = (LinearLayout) findViewById(R.id.sales_container_layout);
@@ -75,12 +77,12 @@ public class EditorActivity extends AppCompatActivity
         et_item_name = (EditText) findViewById(R.id.item_name);
         et_item_price = (EditText) findViewById(R.id.item_price);
         et_item_brand = (EditText) findViewById(R.id.item_brand);
-        LinearLayout ll_quantity = (LinearLayout) findViewById(R.id.quantity_container_layout);
         et_quantity = (EditText) findViewById(R.id.item_quantity);
-        et_addStock = (EditText) findViewById(R.id.item_to_add_quantity);
+        et_modStock = (EditText) findViewById(R.id.item_to_mod_quantity);
+        tv_place_order_reminder = (TextView) findViewById(R.id.place_order_reminder_label);
         tv_sales = (TextView) findViewById(R.id.item_sales);
-        b_requestStock = (Button) findViewById(R.id.stock_request);
-        tv_quantity_label = (TextView) findViewById(R.id.added_item_quantity_label);
+        iv_requestStock = (ImageView) findViewById(R.id.stock_request);
+        tv_quantity_label = (TextView) findViewById(R.id.quantity_label_textView);
         Button b_minus = (Button) findViewById(R.id.button_subtraction);
         Button b_plus = (Button) findViewById(R.id.button_addition);
 
@@ -115,15 +117,19 @@ public class EditorActivity extends AppCompatActivity
             ll_sales.setVisibility(ll_sales.GONE);
             invalidateOptionsMenu();
         } else {
+
             setTitle(getString(R.string.activity_label_modify_item));
-            ll_quantity.setVisibility(ll_quantity.GONE);
+            tv_place_order_reminder.setVisibility(View.GONE);
+            et_quantity.setKeyListener(null);
+            et_quantity.setTextColor(getResources().getColor(R.color.colorNotEditable));
+            et_quantity.setBackgroundColor(getResources().getColor(R.color.colorTransparent));
+            tv_quantity_label.setText(R.string.item_current_stock_label);
             getLoaderManager().initLoader(EXISTING_PRODUCT_LOADER, null, this);
         }
 
         b_minus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tv_quantity_label.setText(getString(R.string.add_stock_label));
                 reduceNewStock();
             }
         });
@@ -132,59 +138,58 @@ public class EditorActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 increaseStock();
-                tv_quantity_label.setText(getString(R.string.add_stock_label));
             }
         });
 
-        b_requestStock.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDialogRequestMerchandise();
-                stock_requested = true;
-            }
-        });
     }
 
     private void updateItemStock() {
-        if (stock_requested != false) {
-            String cantidad = et_addStock.getText().toString();
 
-            ContentValues values = new ContentValues();
-            values.put(ItemContract.ItemEntry.COLUMN_ITEM_QUANTITY, cantidad);
+        String newStock = et_modStock.getText().toString();
 
-            if (currentProductUri != null) {
-                int rowUpdated = getContentResolver().update(currentProductUri, values, null, null);
+        ContentValues values = new ContentValues();
+        values.put(ItemContract.ItemEntry.COLUMN_ITEM_QUANTITY, newStock);
 
-                if (rowUpdated == 0) {
-                    Toast.makeText(this, R.string.no_stock_updated, Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(this, R.string.stock_updated, Toast.LENGTH_LONG).show();
-                }
+        if (currentProductUri != null) {
+            int rowUpdated = getContentResolver().update(currentProductUri, values, null, null);
+
+            if (rowUpdated == 0) {
+                Toast.makeText(this, R.string.no_stock_updated, Toast.LENGTH_LONG).show();
+            } else {
+                et_quantity.setText(newStock);
+                isItemUpdated = true;
+
             }
+        }
+    }
+
+
+    private void increaseStock() {
+        current_item_quantity = Integer.parseInt(et_quantity.getText().toString());
+        int newStock = Integer.parseInt(et_modStock.getText().toString());
+        int result = newStock + 1;
+        String addition = String.valueOf(result);
+        et_modStock.setText(addition);
+        if (result > current_item_quantity) {
+            tv_place_order_reminder.setVisibility(View.VISIBLE);
+        } else {
+            tv_place_order_reminder.setVisibility(View.GONE);
         }
     }
 
     private void reduceNewStock() {
         current_item_quantity = Integer.parseInt(et_quantity.getText().toString());
-        int new_stock = Integer.parseInt(et_addStock.getText().toString());
-
-        if (new_stock > current_item_quantity) {
-            int result = new_stock - 1;
+        int newStock = Integer.parseInt(et_modStock.getText().toString());
+        if (newStock > 0) {
+            int result = newStock - 1;
             String subtraction = String.valueOf(result);
-            et_addStock.setText(subtraction);
+            et_modStock.setText(subtraction);
+            if (result > current_item_quantity) {
+                tv_place_order_reminder.setVisibility(View.VISIBLE);
+            } else {
+                tv_place_order_reminder.setVisibility(View.GONE);
+            }
         }
-
-        if (current_item_quantity == new_stock) {
-            tv_quantity_label.setText(getString(R.string.item_current_stock_label));
-
-        }
-    }
-
-    private void increaseStock() {
-        current_item_quantity = Integer.parseInt(et_addStock.getText().toString());
-        int result = current_item_quantity + 1;
-        String addition = String.valueOf(result);
-        et_addStock.setText(addition);
     }
 
     private String createOrderSummary(String item, String stock) {
@@ -193,7 +198,7 @@ public class EditorActivity extends AppCompatActivity
     }
 
     private void requestStock() {
-        String message = createOrderSummary(et_item_name.getText().toString(), et_addStock.getText().toString());
+        String message = createOrderSummary(et_item_name.getText().toString(), et_modStock.getText().toString());
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_SUBJECT,
@@ -213,13 +218,7 @@ public class EditorActivity extends AppCompatActivity
                 deleteItem();
             }
         });
-        builder.setNegativeButton(R.string.button_cancel, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                if (dialog != null) {
-                    dialog.dismiss();
-                }
-            }
-        });
+        builder.setNegativeButton(R.string.button_cancel, null);
 
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
@@ -389,6 +388,7 @@ public class EditorActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.saved_product:
+                updateItemStock();
                 AddNewProduct();
                 finish();
                 return true;
@@ -443,7 +443,7 @@ public class EditorActivity extends AppCompatActivity
             et_item_price.setText(String.valueOf(price));
             et_item_brand.setText(brand);
             et_quantity.setText(String.valueOf(quantity));
-            et_addStock.setText(String.valueOf(quantity));
+            et_modStock.setText(String.valueOf(quantity));
             tv_sales.setText(String.valueOf(sales));
 
             Picasso.with(this).load(currentPhotoUri)
@@ -464,13 +464,10 @@ public class EditorActivity extends AppCompatActivity
     private void showDialogRequestMerchandise() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(R.string.dialog_add_new_stock);
+        builder.setMessage(R.string.dialog_send_order);
         builder.setPositiveButton(R.string.button_yes, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                isItemUpdated = true;
-                updateItemStock();
                 requestStock();
-                et_quantity.setText(et_addStock.getText());
 
             }
         });
