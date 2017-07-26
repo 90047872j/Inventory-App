@@ -18,8 +18,12 @@
             style="@style/empty_view_image" />
 
         <TextView
+            android:id="@+id/empty_view_text_view"
             style="@style/empty_view_text"
-            android:layout_centerInParent="true" />
+             />
+
+
+
 
     </RelativeLayout>
 

@@ -328,7 +328,7 @@ public class EditorActivity extends AppCompatActivity
         String item_quantity = et_quantity.getText().toString();
 
         if (item_name.isEmpty() || item_price.isEmpty() || item_brand.isEmpty() || item_quantity.isEmpty()) {
-            Toast.makeText(this, R.string.missing_fields, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.missing_fields, Toast.LENGTH_LONG).show();
             return;
         }
 
